@@ -1,0 +1,120 @@
+*
+    // border: 1px solid  black
+    font-family: 微軟正黑體
+    position: relative
+
+@mixin center
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+@mixin size($h:30px,$w:30px)
+    height: $h
+    width: $w
+
+html,body
+    height: 100%
+    width: 100%
+    margin: 0px
+    display: flex
+    justify-content: center
+    align-items: center    
+    flex-direction: column
+    background-color: #222
+
+.phone
+    width: 220px
+    padding: 10px
+    margin: 20px 0px
+    border-radius: 15px
+    background-color: #ddd
+    transition: 0.5s
+    left: 0px
+
+    .top
+        height: 40px
+        &::after
+            content: ""
+            +size(10px,10px)
+            border-radius: 10px
+            background-color: #000
+            +center
+
+    .screen
+        height: 300px
+        cursor: pointer
+        white-space: nowrap
+        font-size: 0px
+        overflow: hidden
+        transition: 0.5s
+
+        .pages
+            vertical-align: top
+            font-size: initial
+            width: 100%
+            height: 100%
+            box-sizing: border-box
+            display: inline-block
+            transition: 0.5s
+            background-color: #aaa
+            border-bottom: solid 30px orange
+
+        .page1
+            background-color: orange
+            overflow: hidden
+            &::after
+                content: ""
+                display: block
+                +size(300px,300px)
+                background-color: #f07816
+                border-radius: 100%
+                bottom: -80px
+                position: absolute
+            & h2
+                margin: 0px
+                padding: 0px 10px
+                color: rgba(#fff,1)
+        
+        .page2,.page3
+            &::after
+                content: ""
+                display: block
+                top: 0px
+                height: 60px
+                width: 100%
+                background-color: orange
+            & h2
+                position: absolute
+                margin: 0px
+                padding: 10px
+
+    .bottom
+        height: 60px
+        .home_button
+            border: solid 1px
+            +center
+            +size(40px,40px)
+            border-radius: 100%
+            &::after
+                content: ""
+                +center
+                border: solid 1px
+                +size(13px,13px)
+                border-radius: 3px
+
+.text,.phone_name
+    color:#fff
+
+.select
+    margin: 15px 0px
+    button
+        display: inline-block
+        background-color: transparent
+        color: rgba(#fff,0.9)
+        margin: 5px
+        border: solid 2px rgba(#fff,0.5)
+        border-radius: 5px
+        padding: 2px 5px
+        cursor: pointer
+
+

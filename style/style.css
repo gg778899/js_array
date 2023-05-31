@@ -1,0 +1,133 @@
+@charset "UTF-8";
+* {
+  font-family: 微軟正黑體;
+  position: relative;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #222;
+}
+
+.phone {
+  width: 220px;
+  padding: 10px;
+  margin: 20px 0px;
+  border-radius: 15px;
+  background-color: #ddd;
+  transition: 0.5s;
+  left: 0px;
+}
+.phone .top {
+  height: 40px;
+}
+.phone .top::after {
+  content: "";
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  background-color: #000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.phone .screen {
+  height: 300px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.phone .screen .pages {
+  vertical-align: top;
+  font-size: initial;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  transition: 0.5s;
+  background-color: #aaa;
+  border-bottom: solid 30px orange;
+}
+.phone .screen .page1 {
+  background-color: orange;
+  overflow: hidden;
+}
+.phone .screen .page1::after {
+  content: "";
+  display: block;
+  height: 300px;
+  width: 300px;
+  background-color: #f07816;
+  border-radius: 100%;
+  bottom: -80px;
+  position: absolute;
+}
+.phone .screen .page1 h2 {
+  margin: 0px;
+  padding: 0px 10px;
+  color: white;
+}
+.phone .screen .page2::after, .phone .screen .page3::after {
+  content: "";
+  display: block;
+  top: 0px;
+  height: 60px;
+  width: 100%;
+  background-color: orange;
+}
+.phone .screen .page2 h2, .phone .screen .page3 h2 {
+  position: absolute;
+  margin: 0px;
+  padding: 10px;
+}
+.phone .bottom {
+  height: 60px;
+}
+.phone .bottom .home_button {
+  border: solid 1px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+}
+.phone .bottom .home_button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px;
+  height: 13px;
+  width: 13px;
+  border-radius: 3px;
+}
+
+.text, .phone_name {
+  color: #fff;
+}
+
+.select {
+  margin: 15px 0px;
+}
+.select button {
+  display: inline-block;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 5px;
+  border: solid 2px rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
